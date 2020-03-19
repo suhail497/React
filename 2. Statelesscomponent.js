@@ -5,8 +5,8 @@ class StatelessExample extends React.Component {
    render() {
       return (
          <div>
-            <Header/>
-            <Content/>
+            <Header />
+            <Content />
             <FunctionStatelessExample />
          </div>
       );
@@ -31,16 +31,16 @@ class Content extends React.Component {
       );
    }
 }
-const FunctionStatelessExample = () =>{
-    return(
-        <div>
-            <p>Checking Stateless Example</p>
-        </div>
-    )
+const FunctionStatelessExample = () => {
+   return (
+      <div>
+         <p>Checking Stateless Example</p>
+      </div>
+   )
 }
 
 
-export {StatelessExample}
+export { StatelessExample }
 
 
 
