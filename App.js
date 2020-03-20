@@ -52,7 +52,26 @@ import { Reference } from "./Forms/References/1.Refs"
 
 // import { Greeting } from "./Conditinalrendering/1. Condinatalrendering";
 
-import { LoginControl } from "./Conditinalrendering/2.ElementVaribles";
+import { LoginControl } from "./Conditionalrendering/2.ElementVaribles";
+import { Mailbox } from "./Conditionalrendering/3.Inlineeifhandoperator";
+import { Inline, LoginControl2 } from "./Conditionalrendering/4.Inlineifelse";
+
+import { Page } from "./Conditionalrendering/5.Preventcomprendering";
+
+
+// list and keys
+import { listItems, element } from "./List And keys/1.Renderingmulcomp";
+
+import { NumberList } from "./List And keys/2.Basiclist"
+
+import { listItems2, todoItems } from "./List And keys/3.Keys"
+import { NumberList3 } from "./List And keys/4.Extractingcompandkeys"
+
+import { Blog } from "./List And keys/5.Blogwithkey";
+
+import { Usingstate } from "./List And keys/6.Usingstatespropsandkeys";
+
+
 
 // Practice
 
@@ -61,6 +80,7 @@ import { LoginControl } from "./Conditinalrendering/2.ElementVaribles";
 import { SetSE } from './Practice/1.Setstateobj';
 // import { Setarray } from './Practice/2.StateEarray';
 import { Setarrayofobjects } from './ComponentAPI/4.Setstatearrayobjects';
+
 
 
 
@@ -91,12 +111,24 @@ export default class App extends React.Component {
       header: "Header from state...",
       content: "Content from state..."
     }
+    this.messages = ['React', 'Re: React', 'Re:Re: React'];
 
   }
   render() {
+
+    // const messages = ['React', 'Re: React', 'Re:Re: React'];
+
     //             // const classes = useStyles();
 
     //             // const [value, setValue] = React.useState(0);
+
+    const numbers = [1, 2, 3, 4, 5];
+
+    const posts = [
+      { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
+      { id: 2, title: 'Installation', content: 'You can install React from npm.' }
+    ];
+
 
     return (
       <div>
@@ -193,11 +225,45 @@ export default class App extends React.Component {
         {/* <Greeting isLoggedIn={true} /> */}
         <LoginControl />
 
+
+        <Mailbox unreadMessages={this.messages} />
+        <LoginControl2 />
+        <Page />
+
+        {/* list and keys */}
+        <ul>
+
+          {listItems}
+          {element}
+
+        </ul>
+
+        <NumberList numbers={numbers} />
+        {/* keys */}
+
+        <ul>
+
+          {listItems2}
+          {todoItems}
+
+        </ul>
+
+
+        <NumberList3 numbers={numbers} />
+        <Blog posts2={posts} />
+
+
+
+
+        <Usingstate />
+
+
+
         {/* Practice */}
         {/* <Greeting /> */}
         <SetSE />
         {/* <Setarray/> */}
-      </div>
+      </div >
 
     );
   }

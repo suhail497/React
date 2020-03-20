@@ -1,5 +1,5 @@
 import React from "react";
-import Greeting from "./1. Condinatalrendering";
+import Greeting from "./1. Conditionalrendering";
 
 function LoginButton(props) {
     return (
@@ -16,7 +16,7 @@ function LogoutButton(props) {
     );
 }
 
-class LoginControl extends React.Component {
+class LoginControl2 extends React.Component {
     constructor(props) {
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
@@ -38,10 +38,11 @@ class LoginControl extends React.Component {
             button = <LoginButton onClick={this.handleLoginClick} />;
         }
         return (
-            <div>
+            <>
                 <Greeting isLoggedIn={isLoggedIn} />
                 {button}
-            </div>
+                The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+            </>
         );
     }
 }
@@ -49,4 +50,6 @@ class LoginControl extends React.Component {
 
 
 
-export { LoginControl }
+
+
+export { LoginControl2 }
